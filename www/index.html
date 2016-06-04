@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
@@ -19,30 +10,17 @@
 
         <script src="js/jquery.js"></script>
 
-        <script src="architect://architect.js"></script>
-        <script src="js/ade.js"></script>
-
-        <script type="text/javascript" src="js/poi.js"></script>
+        <!-- // <script src="https://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script> -->
     </head>
     <body>
-        <div data-role="page" id="page1" style="background: none;" >
+        
+        <!-- Home -->
+        <div data-role="page" id="home">
             
-            <!-- MAIN PAGE CONTENT -->
-
-            <!-- transparent footer-->
-            <div data-role="footer" class="ui-bar" data-theme="f" data-position="fixed" style="text-align:center;">
-
-                <!-- small status-button -->
-                <a style="text-align:right;" id="popupInfoButton" href="#popupInfo" data-rel="popup" data-role="button" class="ui-icon-alt" data-inline="true" data-transition="pop" data-icon="alert" data-theme="e" data-iconpos="notext">Log</a> </p>
-
-                <!-- popup displayed when button clicked -->
-                <div data-role="popup" id="popupInfo" class="ui-content" data-theme="e" style="max-width:350px;">
-                  <p style="text-align:right;" id="status-message">Trying to find out where you are</p>
-                </div>
-                
-            </div>
+            <h1>The Golden Ticket</h1>
 
         </div>
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
