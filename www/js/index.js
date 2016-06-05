@@ -4,6 +4,13 @@ var app = {
     },
     onDeviceReady: function() {
         console.log('Device ready');
+
+        location.get(function(position) {
+            console.log("Lat: " + position.coords.latitude);
+            console.log("Long: " + position.coords.longitude);
+        }, function(error) {
+            console.log("Error " + error.code + ": " error.message);
+        });
     }
 };
 
@@ -14,6 +21,12 @@ var view = {
         $('#view').animate({
             'left': '-=100%'
         }, 500);
+    }
+};
+
+var location = {
+    get: function(success, error) {
+        navigator.geolocation.getCurrentPosition(success, error);
     }
 };
 
