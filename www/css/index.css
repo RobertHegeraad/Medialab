@@ -2,6 +2,11 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
+
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
@@ -25,6 +30,7 @@ body {
     padding:0px;
     text-transform:uppercase;
     width:100%;
+    overflow-x: hidden;
 }
 
 /* Portrait layout (default) */
@@ -53,6 +59,8 @@ body {
 
 /* GENERAL ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 ol, ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
 .clear {
@@ -65,7 +73,7 @@ ol, ul {
     float: right;
 }
 
-/* MENU ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Z-INDEX ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 #menu {
     z-index: 100000;
 }
@@ -94,6 +102,47 @@ ol, ul {
     background-position: center;
     float: left;
 }
+
+
+/* HEADER ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+#header {
+    width: 100%;
+    height: 40px;
+    background-color: #f9f9f9;
+}
+    #page-title {
+        width: 75%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 14px;
+        line-height: 38px;
+    }
+    #back-btn {
+        margin: 7px 0 7px 7px;
+        float: left;
+        display: none;
+    }
+
+/* PAGES ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+#pages {
+    width: 1000%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+    .page {
+        width: 10%;
+        height: 100%;
+        float: left;
+        background: white;
+    }
+
+    #home {
+    
+    }
+    #profile {
+    
+    }
 
 /* MENU ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 #menu-overlay {
@@ -627,6 +676,7 @@ input[type=radio]:checked + .radio {
 .btn-white {
     background: none;
     background-color: #ffffff;
+    border: 1px solid #dbdbdb;
 }
 
 .btn-white:hover {

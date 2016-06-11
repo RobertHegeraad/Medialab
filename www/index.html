@@ -14,12 +14,34 @@
     </head>
     <body>
         
-        <!-- Home -->
-        <div data-role="page" id="home">
-            
-            <h1>The Golden Ticket</h1>
+        <div id="header">
+            <button id="back-btn" class="btn btn-white">Back</button>
+            <h1 id="page-title">The Golden Ticket</h1>
+        </div>        
 
-        </div>
+        <!-- <ul id="menu">
+            <li class="menu-item"></li>
+        </ul> -->
+
+        <ul id="pages">
+            <li class="page" id="home" data-title="The Golden Ticket">
+                
+                <h1 data-view="profile">Go to my profile</h1>
+
+            </li>
+
+            <!-- <li class="page" id="profile" data-title="Mijn profiel">
+                
+                <h1 data-view="test">Go back to home</h1>
+
+            </li>
+
+            <li class="page" id="test" data-title="test">
+                
+                <h1 data-view="home">Go back to home</h1>
+
+            </li> -->
+        </ul>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>

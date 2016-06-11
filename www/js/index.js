@@ -1,34 +1,101 @@
 var app = {
     initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        // document.addEventListener('deviceready', this.onDeviceReady, false);
+        app.onDeviceReady();    // Mimick deviceready event
     },
     onDeviceReady: function() {
         console.log('Device ready');
 
-        location.get(function(position) {
-            console.log("Lat: " + position.coords.latitude);
-            console.log("Long: " + position.coords.longitude);
-        }, function(error) {
-            console.log("Error " + error.code + ": " error.message);
-        });
+        view.init();
+
+        // Geeft error in browser
+        // location.get(function(position) {
+        //     console.log("Lat: " + position.coords.latitude);
+        //     console.log("Long: " + position.coords.longitude);
+        // }, function(error) {
+        //     // console.log("Error " + error.code + ": " error.message);
+        // });
     }
 };
 
 var view = {
-    load: function() {
-        // Slide to next view
+    current: 'home',
+    stack: ['home'],
+    init: function() {
+        $(document).on('click', '[data-view]', function(e) {
+            var page = $(this).data('view');
+            view.load({
+                page: page
+            });
+        });
+        $(document).on('click', '#back-btn', this.back);
+    },
+    home: function() {
+        view.show('home');
+    },
+    back: function() {
+        var index = view.stack.lastIndexOf(view.current);   // Vind de eerste index
+        if(index == 0) {
+            return;
+        }
 
-        $('#view').animate({
-            'left': '-=100%'
-        }, 500);
+        $('#pages').animate({
+            'left': '+=100%'
+        }, 300, function() {
+            view.stack.pop();
+            
+            view.current = view.stack[index-1];
+            if(index == 1)
+            $('#back-btn').hide();
+
+            $('#pages .page:eq(' + index + ')').remove();
+        });
+    },
+    load: function(data) {
+        data = data || {};
+
+        var $page = $('#' + data.page);
+
+        view.stack.push(data.page);
+        
+        view.show(data.page);
+
+        view.current = data.page;
+
+        request.get('views/' + data.page + '.html', function(html) {
+            // Put the data on the page
+            for(d in data) {
+                html = html.replace(new RegExp('{{' + d + '}}', 'g'), data[d]);
+            }
+
+            // Create the page from html
+            var $newPage = $(html);
+            $('#pages').append($newPage);
+
+            $('#back-btn').toggle(data.page != 'home');
+
+            var title = $newPage.data('title');
+            $('#page-title').html(title);
+        });
+    },
+    show: function(page) {
+        console.log('Current page ' + view.current);
+        console.log('Showing page ' + page);
+
+        view.current = page;
+
+        $('#pages').animate({
+            'left': page == 'home' ? '0%' : '-=100%'
+        }, 300);
     }
 };
 
-var location = {
-    get: function(success, error) {
-        navigator.geolocation.getCurrentPosition(success, error);
-    }
-};
+// Geeft error in browser
+// var location = {
+//     get: function(success, error) {
+//         navigator.geolocation.getCurrentPosition(success, error);
+//     }
+// };
 
 var map = {
     map: null,
@@ -65,8 +132,6 @@ var map = {
 };
 
 var request = {
-    url: 'http://192.168.33.10:3000/',
-
     get: function(resource, cb) {
         this.send('get', resource, cb)
     },
@@ -78,13 +143,10 @@ var request = {
     send: function(type, resource, cb, data) {
         var o = {
             type: type,
-            url: this.url + resource,
-            success: cb
+            url: resource,
+            success: cb,
+            cache: false
         };
-
-        if(data) {
-            o.data = { "tag": data };
-        }
 
         $.ajax(o);
     }
@@ -178,7 +240,5 @@ var storage = {
         window.localStorage.clear();
     }
 };
-
-
 
 app.initialize();
