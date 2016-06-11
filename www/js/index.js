@@ -8,6 +8,8 @@ var app = {
 
         view.init();
 
+        // map.init();
+
         // Geeft error in browser
         // location.get(function(position) {
         //     console.log("Lat: " + position.coords.latitude);
@@ -102,13 +104,13 @@ var map = {
 
     marker: null,
 
-    load: function() {
-        map.map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
+    init: function() {
+        map.map = new google.maps.Map(document.getElementById('map-container'), {
+            center: {lat: 51.923493, lng: 4.478339 },
             scrollwheel: false,
             disableDefaultUI: true,
-            mapTypeControl: true,
-            mapTypeId: google.maps.MapTypeId.SATELLITE,
+            mapTypeControl: false,
+            // mapTypeId: google.maps.MapTypeId.SATELLITE,
             zoom: 17
         });
 
