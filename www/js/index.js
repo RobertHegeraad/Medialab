@@ -19,6 +19,7 @@ var app = {
         // });
 
         $(document).on('click', '.nav-bar-item.search-icon', function(e) {
+            view.home();
             $('#request').focus();
         });
     }
@@ -37,6 +38,9 @@ var view = {
         $(document).on('click', '#back-btn', this.back);
     },
     home: function() {
+        $('#page-title').html('The Golden Ticket');
+        $('#back-btn').hide();
+
         view.show('home');
     },
     back: function() {
