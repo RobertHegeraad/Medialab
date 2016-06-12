@@ -17,6 +17,10 @@ var app = {
         // }, function(error) {
         //     // console.log("Error " + error.code + ": " error.message);
         // });
+
+        $(document).on('click', '.nav-bar-item.search-icon', function(e) {
+            $('#request').focus();
+        });
     }
 };
 
@@ -40,6 +44,8 @@ var view = {
         if(index == 0) {
             return;
         }
+
+        $('#page-title').html('The Golden Ticket'); // Title van nieuwe pagina pakken
 
         $('#pages').animate({
             'left': '+=100%'

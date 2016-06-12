@@ -25,7 +25,6 @@ body {
         color-stop(0.51, #E4E4E4)
     );
     background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
 
     font-family: arial;
@@ -152,6 +151,43 @@ ol, ul {
     
     }
 
+#home {
+
+}
+    #home-reviews {
+
+    }
+
+/* NAV BAR ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+#nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 57px;
+    background: #ffffff;
+    border-top: 1px solid #dbdbdb;
+    overflow: hidden;
+}
+    .nav-bar-item {
+        float: left;
+        width: 25%;
+        text-align: center;
+        padding: 14px 0;
+    }
+        .profile-icon {
+            background-image: url('../img/boy.png');
+        }
+        .write-review-icon {
+            background-image: url('../img/list.png');
+        }
+        .ranking-icon {
+            background-image: url('../img/podium.png');
+        }
+        .search-icon {
+            background-image: url('../img/magnifying-glass.png');
+        }
+
 /* MENU ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 #menu-overlay {
     position: absolute;
@@ -261,6 +297,9 @@ ol, ul {
     background-color: #3165d5;
     color: #ffffff;
 }
+    #map-details h2 {
+        font-weight: 300;
+    }
 /*#map-canvas-container {
     width: 300px;
     height: 300px;
