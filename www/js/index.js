@@ -8,7 +8,7 @@ var app = {
 
         view.init();
 
-        // map.init();
+        map.init();
 
         // Geeft error in browser
         // location.get(function(position) {
@@ -40,8 +40,16 @@ var view = {
     home: function() {
         $('#page-title').html('The Golden Ticket');
         $('#back-btn').hide();
-
-        view.show('home');
+        
+        view.show('home', function() {
+            $('.page').each(function(i, o) {
+                if(i != 0) {
+                    $(o).remove();
+                }
+            });
+            
+            view.stack = ['home'];
+        });
     },
     back: function() {
         var index = view.stack.lastIndexOf(view.current);   // Vind de eerste index
@@ -90,7 +98,7 @@ var view = {
             $('#page-title').html(title);
         });
     },
-    show: function(page) {
+    show: function(page, fn) {
         console.log('Current page ' + view.current);
         console.log('Showing page ' + page);
 
@@ -98,7 +106,7 @@ var view = {
 
         $('#pages').animate({
             'left': page == 'home' ? '0%' : '-=100%'
-        }, 300);
+        }, 300, fn);
     }
 };
 
