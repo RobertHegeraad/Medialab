@@ -1,49 +1,53 @@
 <li id="profile" class="page" data-title="Review">
+
+    <div class="page-inner">
 	
-	<div id="map-container">
-        <ul class="locations-slide">
-           <li style="background-image: url('img/location_1.jpg');"></li>
-           <li style="background-image: url('img/location_2.jpg');"></li>
-       </ul>   
+    	<div id="map-container">
+            <ul class="locations-slide">
+               <li style="background-image: url('img/location_1.jpg');"></li>
+               <li style="background-image: url('img/location_2.jpg');"></li>
+           </ul>   
+        </div>
+
+    	<div id="map-details">
+            <h2>Rotterdam, Nederland</h2>
+        </div>
+
+    	<div class="rating-bar">
+    		<div class="rating fa fa-star"><span>4</span></div>
+    		<span style="font-size: 10px;">48 mensen vonden dit een goede aanbeveling</span>
+    	</div>
+
+        <div id="review-detail">    
+    		<h2 class="title">Review title</h2>
+
+    		<p class="description">Description for the review Description for the review Description for the review Description for the review Description for the review </p>
+        </div>
+
+        <ul id="comments">
+        	<li class="comment">
+        		<img class="user" src="img/person_1.jpg" alt="">
+        		<div class="comment-inner">
+        			<h3>Jij</h3>
+        			<p><input placeholder="Wat vind jij van deze aanbeveling?" type="text"></p>
+        		</div>
+        	</li>
+        	<li class="comment" data-user-id="2" data-view="profile">
+        		<img class="user" src="img/person_2.jpg" alt="">
+        		<div class="comment-inner">
+        			<h3>Comment title</h3>
+        			<p>Comment body</p>
+        		</div>
+        	</li>
+        	<li class="comment" data-user-id="3" data-view="profile">
+        		<img class="user" src="img/person_3.jpg" alt="">
+        		<div class="comment-inner">
+        			<h3>Comment title</h3>
+        			<p>Comment body</p>
+        		</div>
+        	</li>
+        </ul>
+        <button id="more-comments" class="btn btn-blue">Meer reacties</button>
+    
     </div>
-
-	<div id="map-details">
-        <h2>Rotterdam, Nederland</h2>
-    </div>
-
-	<div class="rating-bar">
-		<div class="rating fa fa-star"><span>4</span></div>
-		<span>48 mensen vonden dit een goede aanbeveling</span>
-	</div>
-
-    <div id="review-detail">    
-		<h2 class="title">Review title</h2>
-
-		<p class="description">Description for the review Description for the review Description for the review Description for the review Description for the review </p>
-    </div>
-
-    <ul id="comments">
-    	<li class="comment">
-    		<img class="user" src="img/person_1.jpg" alt="">
-    		<div class="comment-inner">
-    			<h3>Jij</h3>
-    			<p><input placeholder="Wat vind jij van deze aanbeveling?" type="text"></p>
-    		</div>
-    	</li>
-    	<li class="comment" data-user-id="2" data-view="profile">
-    		<img class="user" src="img/person_2.jpg" alt="">
-    		<div class="comment-inner">
-    			<h3>Comment title</h3>
-    			<p>Comment body</p>
-    		</div>
-    	</li>
-    	<li class="comment" data-user-id="3" data-view="profile">
-    		<img class="user" src="img/person_3.jpg" alt="">
-    		<div class="comment-inner">
-    			<h3>Comment title</h3>
-    			<p>Comment body</p>
-    		</div>
-    	</li>
-    </ul>
-    <button id="more-comments" class="btn btn-blue">Meer reacties</button>
 </li>

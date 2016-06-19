@@ -1,3 +1,29 @@
 <li id="write-review" class="page" data-title="Review schrijven">
-	<h1>Schrijf je eigen review</h1>
+	
+	<div id="map-container"></div>
+	<div id="map-details">
+        <h2>Schrijf je eigen review</h2>
+    </div>
+
+	<div class="review-form">
+
+		<label>Voor welke stad is jouw review?</label>
+		<input placeholder="Rotterdam, Nederland" type="text">
+
+		<label>Wat is de titel van jouw review?</label>
+		<input placeholder="Titel" type="text">
+
+		<label>Waarover gaat jouw review?</label>
+		<textarea cols="30" rows="8"></textarea>
+
+		<label>Voeg een aantal afbeeldingen toe.</label>
+		<div class="review-add-image"></div>
+		<div class="review-add-image hidden"></div>
+
+		<label>Voeg een audio bericht toe.</label>
+		<div class="review-add-audio"></div>
+
+		<button id="save-review-btn" class="btn btn-blue">Review opslaan</button>
+
+	</div>
 </li>

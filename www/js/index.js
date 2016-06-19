@@ -22,6 +22,10 @@ var app = {
             view.home();
             $('#request').focus();
         });
+
+        $(document).on('click', '.review-add-image', review.addImage);
+
+        $(document).on('click', '#save-review-btn', review.save);
     }
 };
 
@@ -49,6 +53,10 @@ var view = {
             });
             
             view.stack = ['home'];
+
+            var pages = $('.page');
+            $('#pages').css('width', 100 * pages.length + '%');
+            $('.page').css('width', 100 / pages.length + '%');
         });
     },
     back: function() {
@@ -69,6 +77,10 @@ var view = {
             $('#back-btn').hide();
 
             $('#pages .page:eq(' + index + ')').remove();
+
+            var pages = $('.page');
+            $('#pages').css('width', 100 * pages.length + '%');
+            $('.page').css('width', 100 / pages.length + '%');
         });
     },
     load: function(data) {
@@ -96,6 +108,10 @@ var view = {
 
             var title = $newPage.data('title');
             $('#page-title').html(title);
+
+            var pages = $('.page');
+            $('#pages').css('width', 100 * pages.length + '%');
+            $('.page').css('width', 100 / pages.length + '%');
         });
     },
     show: function(page, fn) {
@@ -148,6 +164,18 @@ var map = {
         map.marker.setMap(map.map);
 
         map.map.setCenter(map.marker.getPosition());
+    }
+};
+
+var review = {
+    addImage: function() {
+        // Open storage and select image / Take picture with camera
+
+        $('.review-add-image').removeClass('hidden');
+    },
+    save: function() {
+        alert('Jouw review is opgeslagen!');
+        view.home();
     }
 };
 
