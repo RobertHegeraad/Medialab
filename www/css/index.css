@@ -344,7 +344,21 @@ ol, ul {
     background-color: #3165d5;
     color: #ffffff;
 }
+    #map-details .profile-image {
+        width: 60px;
+        height: 60px;
+        border: 2px solid #ffffff;
+        background-image: url('../img/person_1.jpg');
+        background-size: contain;
+        position: absolute;
+        left: 10px;
+        top: -60px;
+    }
     #map-details h2 {
+        font-weight: 300;
+    }
+    #map-details p {
+        font-size: 10px;
         font-weight: 300;
     }
 
@@ -390,6 +404,10 @@ ol, ul {
         border-width: 6px;
     }*/
 
+.fa-star, .fa-star-half {
+    color: #F5CE20;
+}
+
 .reviews {
 
 }
@@ -418,7 +436,7 @@ ol, ul {
     .reviews .review .review-inner p {
         color: #666666;
     }
-    .reviews .review i {
+    .reviews .review i.fa-chevron-right {
         float: right;
         margin-top: 10px;
         font-size: 20px;
@@ -490,10 +508,14 @@ ol, ul {
         float: left;
     }
     .comment .comment-inner input[type=text] {
-        width: 100%;
+        width: 70%;
         border-radius: 2px;
-        padding: 3px;
+        padding: 6px 3px;
         border: 1px solid #dbdbdb;
+    }
+    .comment .comment-inner button {
+        width: 25%;
+        margin-left: 2px;
     }
     .comment .comment-inner h3 {
         font-size: 12px;
