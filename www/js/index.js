@@ -8,7 +8,7 @@ var app = {
 
         view.init();
 
-        map.init();
+        // map.init();
 
         // Geeft error in browser
         // location.get(function(position) {
@@ -26,6 +26,14 @@ var app = {
         $(document).on('click', '.review-add-image', review.addImage);
 
         $(document).on('click', '#save-review-btn', review.save);
+
+        $(document).on('click', '#rate-review-btn', review.rate);
+        $(document).on('click', '#rate-review', function() {
+            notice.show('Bedankt voor je deelname!');
+            review.rate();
+        });
+
+        $(document).on('click', '#like-review-btn', review.like);
     }
 };
 
@@ -176,6 +184,12 @@ var review = {
     save: function() {
         alert('Jouw review is opgeslagen!');
         view.home();
+    },
+    rate: function() {
+        $('#rate-review').fadeToggle(300);
+    },
+    like: function() {
+        notice.show('Je hebt deze review aan je favorieten toegevoegd!');
     }
 };
 
