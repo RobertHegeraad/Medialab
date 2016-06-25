@@ -251,7 +251,7 @@ ol, ul {
 }
     .review-form button {
         margin-top: 20px;
-        float: right;
+        display: block;
     }
     .review-form label {
         margin-top: 20px;
@@ -266,21 +266,20 @@ ol, ul {
     .review-form .review-add-image {
         width: 80px;
         height: 80px;
-        margin: 10px;
-        margin-left: 0;
+        margin: 10px 10px 20px 0;
         float: left;
         border: 1px solid #dbdbdb;
         background-image: url('../img/placeholder.png');
         background-size: contain;
     }
     .review-form .review-add-audio {
-        width: 80px;
-        height: 80px;
-        margin: 10px;
-        margin-left: 0;
+        margin-top: 10px;
+        padding: 25px 30px;
+        border-radius: 50%;
         border: 1px solid #dbdbdb;
-        background-image: url('../img/placeholder.png');
-        background-size: contain;
+        font-size: 30px;
+        background: #f3f3f3;
+        color: #333333;
     }
 
 /* REQUEST ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
@@ -443,21 +442,19 @@ ol, ul {
     }
 
 .rating-bar {
-    padding: 6px 0;
     overflow: hidden;
-    border-bottom: 1px solid #dbdbdb;
     text-align: right;
     font-size: 12px;
     color: #999999;
 }
     .rating-bar span {
-        margin-top: 12px;
+        margin-left: 6px;
         float: right;
     }
     .rating-bar .rating {
         position: relative;
         display: block;
-        font-size: 36px;
+        font-size: 18px;
         color: #F5CE20;
         margin: 0 10px;
         float: right;
@@ -471,10 +468,19 @@ ol, ul {
             font-weight: bold;
         }
 
-#like-review-btn {
+#like-review-btn, #audio-tour-btn {
     margin-top: 2px;
     color: #3165d5;
-    font-size: 32px;
+    font-size: 14px;
+    margin: 0 6px 10px;
+    float: left;
+    font-family: 'Roboto', sans-serif;
+}
+#like-review-btn:before, #audio-tour-btn:before {
+    font-family: FontAwesome;
+}
+#like-review-btn span, #audio-tour-btn span {
+    float: right;
 }
 
 #rate-review {
