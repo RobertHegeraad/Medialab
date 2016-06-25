@@ -34,6 +34,8 @@ var app = {
         });
 
         $(document).on('click', '#like-review-btn', review.like);
+
+        $(document).on('click', '#go-event-btn', review.go);
     }
 };
 
@@ -190,6 +192,18 @@ var review = {
     },
     like: function() {
         notice.show('Je hebt deze review aan je favorieten toegevoegd!');
+    },
+    go: function() {
+        var status = $(this).data('status');
+        if(status) {
+            $(this).html('Ik ga niet');
+            $(this).data('status', false);
+            notice.show('Je hebt je afgemeld voor dit evenement!');
+        } else {
+            $(this).html('Ik ga mee');
+            $(this).data('status', true);
+            notice.show('Je hebt je aangemeld voor dit evenement!');
+        }
     }
 };
 

@@ -482,6 +482,34 @@ ol, ul {
 #like-review-btn span, #audio-tour-btn span {
     float: right;
 }
+#audio-tour-btn.home {
+    font-size: 10px;
+    margin: 0;
+    margin-top: 4px;
+}
+#audio-tour-btn.home span {
+    margin-left: 4px;
+}
+
+.review-side-menu {
+    width: 25%;
+    margin-top: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 6px;
+}
+.review-side-menu .fa-calendar {
+    margin-right: 4px;
+}
+.review-side-menu #go-event-btn {
+    margin-top: 6px;
+}
+.review-side-menu .description {
+    color: #000000;
+    font-size: 12px;
+    margin: 8px 0;
+    text-transform: none;
+}
 
 #rate-review {
     padding: 12px;
@@ -509,6 +537,7 @@ ol, ul {
 
 #review-detail {
     padding: 12px;
+    width: 60%;
 }
     #review-detail .title {
         margin-bottom: 6px;
